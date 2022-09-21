@@ -1,7 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
+    {% load static %}
     <br><br>
     <h1 class="center"><b>The CIMS Team !</b></h1>
+    {% if user.is_authenticated %}
+        <section id="form">
+            <!-- Dashboard -->
+            <div class="row center">
+                <div class="column">
+                    <br><br>
+                    <img src="{% static '/users/patient.png' %}" alt="Patient image">
+                    <h2><a>Reception</a></h2>
+                    <p>Some text..</p>
+                </div>
+
+                <div class="column" >
+                    <br><br>
+                    <img src="{% static '/users/diagnosis.png' %}" alt="Diagnosis image">
+                  <h2><a >Laboratory</a></h2>
+                  <p>Some text..</p>
+                </div>
+
+                <div class="column" >
+                    <br><br>
+                    <img src="{% static '/users/medicine.png' %}" alt="Medicine image">
+                  <h2><a >Pharmacy</a></h2>
+                  <p>Some text..</p>
+                </div>
+
+                <div class="column" >
+                    <br><br>
+                    <img src="{% static '/users/appointment.png' %}" alt="Appointment image">
+                  <h2><a >Doctors</a></h2>
+                  <p>Some text..</p>
+                </div>
+            </div>
+        </section>
+    {% else %}
     <section id="form">
 
         <div>
@@ -10,6 +45,7 @@
             </h2>
         </div>
     </section>
+    {% endif %}
     <style type="text/css">
         #team_btn{
             color:white;
