@@ -56,9 +56,7 @@ header li{
 }
 header #trademark{
     float: left;
-}
-header #trademark h1{
-margin: 0;
+    margin-left: 0;
 }
 
 header nav{
