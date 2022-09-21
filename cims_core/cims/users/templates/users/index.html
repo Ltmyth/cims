@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+    <br><br>
+    {% if user.is_authenticated %}
+        <section id="form">
+
+            <div>
+                <h2>
+                    A one stop point for clinical management information
+                </h2>
+                <p>
+                    A web based clinic mangement system that has inbuilt
+                    features out of the box for simplified and insightful
+                    clinic management.
+                </p>
+            </div>
+        </section>
+        <style type="text/css">
+            #logo{
+                color:white;
+            }
+            #home_btn{
+                color:white;
+            }
+        </style>
+    {% else %}
+        <h1 class="center"><b>Welcome to CIMS !</b></h1>
+        <section id="form">
+
+            <div>
+                <h2>
+                    A one stop point for clinical management information
+                </h2>
+                <p>
+                    A web based clinic mangement system that has inbuilt
+                    features out of the box for simplified and insightful
+                    clinic management.
+                </p>
+            </div>
+        </section>
+        <style type="text/css">
+            #logo{
+                color:white;
+            }
+        </style>
+    {% endif %}
+{% endblock %}

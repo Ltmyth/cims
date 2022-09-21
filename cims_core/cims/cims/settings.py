@@ -57,7 +57,7 @@ ROOT_URLCONF = 'cims.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/Users/mark/Desktop/django projects/cims/cims_core/cims/users/templates/users/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

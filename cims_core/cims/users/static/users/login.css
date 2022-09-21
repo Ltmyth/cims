@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+   margin: 0;
+   border: none;
+   padding: 0;
+}
+body{
+    font-family: Poppins,sans-serif;
+    font-weight: 300;
+    color: #786fa6;
+    background: #1B1464;
+    margin: 0 0 100px 0;
+}
+/* headings and trademark*/
+h1{
+    font-family: poppins, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #f1c40f;
+    text-align: center;
+    margin-top: 15%;
+}
+
+#form{
+    margin: 4% 25% 20% 23%;
+    width: 50%;
+    height: 50%;
+    padding: 30px;
+    background:#d2dae2;
+    border-radius: 5px;
+}
+.center {
+    text-align: center;
+}
+input, textarea{
+    width:75%;
+    margin:1%;
+    padding: 20px;
+    border: #f1c40f ;
+    border: 2px;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+.submit{
+    background:#786fa6;
+    padding: 10px 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width:100px;
+    color:white;
+}
+
+
+@media(max-width: 768px){
+    header #branding,
+    header nav,
+    header nav li,
+    #boxes .box,
+    article#main-col,
+    aside#sidebar{
+      float:none;
+      text-align:center;
+      width:100%;
+    }
+
+    header{
+      padding-bottom:20px;
+    }
+
+    #showcase h1{
+      margin-top:40px;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    body{
+        font-size: 12px;
+    }
+
+    /* Show mobile menu*/
+    #mobilemenu{
+        display: inline;
+    }
+   /* Hide nav menu*/
+    nav{
+        display: none;
+    }
+
+    /*make tables responsive*/
+    table, tbody, td, tr {
+		display: block;
+	}
+}
