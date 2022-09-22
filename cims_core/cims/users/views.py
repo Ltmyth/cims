@@ -15,9 +15,6 @@ def index(request):
 def home(request):
     return render(request, 'users/index.html')
 
-def about(request):
-    return render(request, 'users/about.html')
-
 #loging
 def login(request):
     return render(request, 'users/user_login.html')

@@ -159,6 +159,10 @@ footer{
     bottom: 0;
     width: 100%;
 }
+button{
+    padding:5px;
+    border-radius: 5px;
+}
 
 .column {
     float: left;
