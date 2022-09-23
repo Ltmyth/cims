@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 # user database
 from django.contrib.auth.models import User
+from .models import Diagnosis, Appointment, Medicine, Patient
 # authenticate
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 
@@ -13,7 +14,11 @@ def index(request):
     return render(request, 'users/user_login.html')
 
 def home(request):
-    return render(request, 'users/index.html')
+    patients = Patient.objects.all().count()
+    diagnosis = Diagnosis.objects.all().count()
+    medicine  = Medicine.objects.all().count()
+    appointments = Appointment.objects.all().count()
+    return render(request, 'users/index.html',{'patients':patients,'diagnosis':diagnosis,'medicine':medicine,'appointments':appointments})
 
 #loging
 def login(request):
@@ -69,3 +74,37 @@ def services(request):
 
 def team(request):
     return render(request, 'users/team.html')
+
+def appointments(request):
+    appointment_data = Appointment.objects.all().count()
+    data = {'appointment_data':appointment_data,}
+    return render(request, 'users/appointments.html',data)
+
+def diagnosis(request):
+    diagnosis_data = Diagnosis.objects.all().count()
+    data = {'diagnosis_data':diagnosis_data,}
+    return render(request, 'users/diagnosis.html',data )
+
+def treatment(request):
+    number = Medicine.objects.all().count()
+    return render(request, 'users/pharmacy.html', {'number':number})
+
+def add_patient(request):
+    user_name = request.POST['fullname']
+    user_age = request.POST['age']
+    ailment = request.POST['ailment']
+    user_email = request.POST['email']
+    if Patient.objects.filter(username = user_name).first():
+        messages.info(request, 'Patient record already exists')
+        return render(request, 'users/patients.html')
+    else:
+        messages.success(request, 'Patient record created.')
+        user = User.objects.create_user(user_name, user_email, user_age,ailment)
+        # Redirect to a success page.
+        return render(request, 'users/patients.html')
+
+def patients(request):
+    # Redirect to a success page.
+    return render(request, 'users/patients.html')
+
+

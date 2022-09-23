@@ -9,10 +9,10 @@
                     <br><br>
                     <img src="{% static '/users/check.png' %}" alt="Patient image">
                     <h2><a>Patients</a></h2>
-                    <h5><b>TOTAL : 0</b></h5>
+                    <h5><b>TOTAL :{{patients}}</b></h5>
                     <br>
                     <a href="/patients">
-                        <button>VIEW</button>
+                        <button class="submit">VIEW</button>
                     </a>
                     <br><br>
                 </div>
@@ -21,9 +21,9 @@
                     <br><br>
                     <img src="{% static '/users/steth.png' %}" alt="Diagnosis image">
                     <h2><a >Diagnosis</a></h2>
-                    <h5><b>TOTAL : 0</b></h5>
+                    <h5><b>TOTAL : {{ diagnosis }}</b></h5>
                     <br>
-                    <button>VIEW</button>
+                    <a href="/diagnosis"><button class="submit">VIEW</button></a>
                     <br><br>
                 </div>
 
@@ -31,9 +31,9 @@
                     <br><br>
                     <img src="{% static '/users/medicine.png' %}" alt="Medicine image">
                     <h2><a >Medication</a></h2>
-                    <h5><b>TOTAL : 0</b></h5>
+                    <h5><b>TOTAL : {{ medicine }}</b></h5>
                     <br>
-                    <button>VIEW</button>
+                    <a href="/treatment"><button class="submit">VIEW</button></a>
                     <br><br>
                 </div>
 
@@ -41,9 +41,9 @@
                     <br><br>
                     <img src="{% static '/users/med3.png' %}" alt="Appointment image">
                     <h2><a >Appointments</a></h2>
-                    <h5><b>TOTAL : 0</b></h5>
+                    <h5><b>TOTAL : {{ appointments }}</b></h5>
                     <br>
-                    <button>VIEW</button>
+                    <a href="appointments/"><button class="submit">VIEW</button></a>
                     <br><br>
                 </div>
             </div>
