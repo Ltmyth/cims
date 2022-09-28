@@ -20,10 +20,12 @@ color: #f1c40f;
 }
 
 .vessel{
-    width: 50%;
-    margin: auto;
     overflow: hidden;
+    padding: 5%;
+    background:#d2dae2;
+    border-radius: 5px;
 }
+
 ul{
     margin: 0;
     padding: 0;
@@ -140,10 +142,6 @@ input, textarea{
 html {
     position: relative;
     min-height: 100%;
-}
-table{
-    width:90%;
-    border-collapse: collapse;
 }
 td{
     text-align: left;

@@ -12,9 +12,12 @@ urlpatterns = [
     path('create_user', views.create_user, name='create_user'),
     path('services', views.services, name='services'),
     path('team', views.team, name='team'),
-    path('appointments', views.appointments, name='appointments'),
+    path('appointments/', views.appointments, name='appointments'),
+    path('make_appointment/', views.make_appointment, name='make_appointment/'),
     path('diagnosis', views.diagnosis, name='diagnosis'),
+    path('diagnize/', views.diagnize, name='diagnize/'),
     path('treatment', views.treatment, name='treatment'),
+    path('prescribe/', views.prescribe, name='prescribe/'),
     path('add_patient/', views.add_patient, name='add_patient/'),
     path('patients/', views.patients, name='patients/'),
 ]
