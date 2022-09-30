@@ -10,6 +10,6 @@ function show(y){
     target.setAttribute("style", "display:inline;");
 }
 
-function say(x){ 
-    alert(x);
+function say(x){
+    confirm(x);
 }

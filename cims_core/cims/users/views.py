@@ -14,11 +14,11 @@ def index(request):
     return render(request, 'users/user_login.html')
 
 def home(request):
-    patients = Patient.objects.all().count()
+    patient = Patient.objects.all().count()
     diagnosis = Diagnosis.objects.all().count()
     medicine  = Medicine.objects.all().count()
     appointments = Appointment.objects.all().count()
-    return render(request, 'users/index.html',{'patients':patients,'diagnosis':diagnosis,'medicine':medicine,'appointments':appointments})
+    return render(request, 'users/index.html',{'patient':patient,'diagnosis':diagnosis,'medicine':medicine,'appointments':appointments})
 
 #loging
 def login(request):
@@ -156,12 +156,32 @@ def add_patient(request):
             # Redirect to a success page.
             return redirect('/patients')
     else:
-        return render(request, 'users/patients.html')
+        return redirect('/patients')
 
-def patients(request):
+def patient(request):
     p_data = Patient.objects.all()
     p_number = p_data.count()
     # Redirect to a success page.
     return render(request, 'users/patients.html',{'p_data':p_data,'p_number':p_number})
+
+
+def delete_patient(request):
+    p_name = request.POST['Patient_Name']
+    patient = Patient.objects.get(full_name=p_name)
+    patient.delete()
+    messages.success(request, 'Patient record deleted.')
+    return redirect('/patients')
+
+def update_patient(request):
+    user_name = request.POST['Patient_Name']
+    ailment = request.POST['ailment']
+    diagnosis = request.POST['diagnosis']
+    user = Patient.objects.get(full_name =user_name)
+    user.full_name = user_name
+    user.diagnosis=diagnosis
+    user.symptoms=ailment
+    user.save()
+    messages.success(request, 'Patient record updated.')
+    return redirect('/patients')
 
 
