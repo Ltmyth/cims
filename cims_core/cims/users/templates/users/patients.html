@@ -64,6 +64,9 @@
                                 <form class="center form" method="POST" action="/update_patient">
                                     {% csrf_token %}
                                     <div>
+                                        <input type="hidden" value="{{p.id}}"  name="Patient_ID" placeholder="{{ p.id}}">
+                                    </div>
+                                    <div>
                                         <input type="text" value="{{p.full_name}}"  name="Patient_Name" placeholder="{{ p.full_name}}" required>
                                     </div>
                                     <div>
@@ -75,7 +78,7 @@
                                     <input type="submit" value="Update Patient">
                                 </form>
                                 <br>
-                                <button class="submit" onclick="hide('update{{ p.full_name}}')">Close</button>
+                                <button class="submit" onclick="hide('update_{{ p.full_name}}')">Close</button>
                                 <br>
                             </div>
                             <br><br>
